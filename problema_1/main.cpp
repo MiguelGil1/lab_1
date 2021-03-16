@@ -29,10 +29,21 @@ int main()
     letra = std::string(letra);
     if (letra == "a"  || letra == "e" || letra == "i" || letra == "o" || letra == "u"){
         cout << "Es vocal." << endl;
-    }else if (letra == "b"  || letra == "c" || letra == "d" || letra == "f" || letra == "g" || letra == "h"  || letra == "j" || letra == "k" || letra == "l" || letra == "m" || letra == "n"  || letra == "s" || letra == "p" || letra == "q" || letra == "r" || letra == "s"  || letra == "v" || letra == "w" || letra == "x" || letra == "y" || letra == "z"){
-        cout << "Es consonante." << endl;
     }else{
-        cout << "No es letra." << endl;
+        key = true;
+        for(int i = 0; i < letra.length(); i++){
+            if(isalpha(letra[i])){
+                key = true;
+            }else{
+                key = false;
+                break;
+            }
+        }
+        if (key == true){
+            cout << "Es consonante." << endl;
+        }else{
+            cout << "No es letra." << endl;
+        }
     }
     return 0;
 }
