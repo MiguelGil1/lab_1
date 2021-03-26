@@ -12,16 +12,13 @@ using namespace std;
 
 int main()
 {
-    int n, multiplo = 1, i = 0;
+    int n, i = 1;
     cout << "Ingrese un numero para calcular sus multiplos entre el 1 y el 100: " << endl;
     cin >> n;
     cout << "Multiplos de " << n << " mernores que 100:" << endl;
-    while(multiplo < 100){
+    while(n * i <= 100){
+        cout << n*i << endl;
         i++;
-        multiplo = n * i;
-        if (multiplo <= 100){
-           cout << multiplo << endl;
-        }
     }
     return 0;
 }
