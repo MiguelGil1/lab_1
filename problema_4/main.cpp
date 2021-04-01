@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
     string a,b,minutos_a_cadena,horas_a_cadena,minutos_b_cadena,horas_b_cadena;
-    int minutos_a, horas_a,minutos_b,horas_b;
+    int minutos_a, horas_a,minutos_b,horas_b,horas_en_minutos,minutos_transcurridos,horas_transcurridas;
     cout << "Ingrese la hora actual:";
     cin >> a;
     for(int i = 0; i < a.length(); i++){
@@ -38,5 +38,23 @@ int main()
     }
     minutos_b = stoi(minutos_b_cadena);
     horas_b = stoi(horas_b_cadena);
+    //Se mira si la suma de los minutos es superior a una hora
+    if ((minutos_a + minutos_b) % 60 == 0){
+        horas_en_minutos = (minutos_a + minutos_b) / 60;
+        minutos_transcurridos = 0;
+    }else if (minutos_a + minutos_b > 60){
+        horas_en_minutos = int((minutos_a + minutos_b)/60);
+        minutos_transcurridos = (minutos_a + minutos_b) % 60;
+    }else{
+       horas_en_minutos = 0;
+       minutos_transcurridos = minutos_a + minutos_b;
+    }
+    //Horas
+    if(horas_a + horas_b + horas_en_minutos >23){
+        horas_transcurridas = (horas_a + horas_b + horas_en_minutos) - 24;
+    }else{
+        horas_transcurridas = horas_a + horas_b + horas_en_minutos;
+    }
+    cout << "La hora es: " << horas_transcurridas << "" << minutos_transcurridos << endl;
     return 0;
 }
