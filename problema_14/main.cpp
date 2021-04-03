@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     int mayor = 0, aux = 0, igual,resultado,i_mayor,j_mayor;
-    cout << "escriba un programa que calcule el número palíndromo más grande que se puede obtener como una multiplicación de números de 3 dígitos." << endl;
+    cout << "escriba un programa que calcule el numero palindromo mas grande que se puede obtener como una multiplicacion de numeros de 3 digitos." << endl;
     for(int i = 100; i < 1000; i++){
         igual = 0;
         aux = 0;
@@ -17,7 +17,7 @@ int main()
             aux++;
         }
         if(string_i.length() == igual) {
-            for(int j = i; j < 1000; j++){
+            /*for(int j = i; j < 1000; j++){
                 igual = 0;
                 aux = 0;
                 string string_j = to_string(j);
@@ -28,16 +28,17 @@ int main()
                     aux++;
                 }
                 if(string_j.length() == igual){
-                    resultado = i * j;
+                    resultado = i * j;*/
+            resultado = i * i;
                     if (resultado > mayor){
                         mayor = resultado;
                         i_mayor = i;
-                        j_mayor = j;
+                        j_mayor = i;
                     }
                 }
             }
-        }
-    }
+        //}
+    //}
     cout << i_mayor << "*" << j_mayor << "=" << mayor << endl;
     return 0;
 }
