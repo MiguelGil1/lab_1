@@ -1,26 +1,26 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
-    string n;
+    int n;
     int aux = 0, igual = 0;
 
     cout << "Ingrese el numero a evaluar: ";
-    getline(cin >> ws, n);
+    cin >> n;
+    string aux_n = to_string(n);
 
-    for(int ind = n.length() - 1; ind >= 0; ind--) {
-        if(n[ind] == n[aux]) {
+    for(int ind = aux_n.length() - 1; ind >= 0; ind--) {
+        if(aux_n[ind] == aux_n[aux]) {
             igual++;
         }
         aux++;
     }
 
-    if(n.length() == igual) {
-        cout << "El numero ingresado es palindromo!! :D" << endl;
+    if(aux_n.length() == igual) {
+        cout << "El numero ingresado es palindromo" << endl;
     } else {
-        cout << "El numero ingresado no es palindromo!! :D" << endl;
+        cout << "El numero ingresado no es palindromo" << endl;
     }
 
     return 0;
